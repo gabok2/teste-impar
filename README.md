@@ -11,7 +11,7 @@ Este é um projeto desenvolvido com base na API do Pokemon. A aplicação consom
 Basta apenas clonar o projeto e rodar os seguintes comandos:
 
 ```
-cd impar
+cd teste-impar
 yarn install
 yarn dev
 ```
