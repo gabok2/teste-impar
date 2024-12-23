@@ -1,6 +1,6 @@
 # Teste Ímpar
 
-Este é um projeto desenvolvido com base na API do Pokemon. A aplicação consome dados da [Pokemon]([https://developer.marvel.com/docs](https://pokeapi.co/))
+Este é um projeto desenvolvido com base na API do Pokemon. A aplicação consome dados da https://developer.marvel.com/docs](https://pokeapi.co/
 
 ## Requisitos
 
