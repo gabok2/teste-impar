@@ -35,14 +35,6 @@ export const useInfiniteScroll = () => {
   const getNextPage = (currentPage: number): PokemonList => {
     const fromIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const toIndex = fromIndex + ITEMS_PER_PAGE;
-    console.log(
-      "fromIndex",
-      fromIndex,
-      "toIndex",
-      toIndex,
-      "currentPage",
-      currentPage
-    );
     return filteredItems.slice(fromIndex, toIndex);
   };
 
@@ -72,7 +64,6 @@ export const useInfiniteScroll = () => {
     loadingRef.current = true;
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const nextItems = getNextPage(page + 1);
-    console.log("nextItems", nextItems.length);
 
     if (nextItems.length > 0) {
       setVisibleItems((prev) => [...prev, ...nextItems]);
@@ -91,8 +82,6 @@ export const useInfiniteScroll = () => {
       loadMore();
     }
   }, [inView]);
-
-  console.log("inView", inView);
 
   useEffect(() => {
     if (items.length > 0) {

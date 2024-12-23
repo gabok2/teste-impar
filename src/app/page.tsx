@@ -3,7 +3,16 @@ import { InfiniteScroll } from "./components/InfiniteScroll";
 import { InputSearch } from "./components/InputSearch";
 import { Button } from "./components/Button";
 
-export default function Home() {
+type SearchParams = {
+  page?: string;
+  search?: string;
+};
+
+export default async function Home({
+  searchParams,
+}: Readonly<{ searchParams: Promise<SearchParams> }>) {
+  const parsedParams = await searchParams;
+
   return (
     <main className="flex-1 w-full flex flex-col pb-4">
       <div className="relative">
@@ -21,7 +30,7 @@ export default function Home() {
           <h1 className="text-primary text-3xl">Resultado de busca</h1>
           <Button title="Novo Card " />
         </div>
-        <InfiniteScroll />
+        <InfiniteScroll parsedParams={parsedParams} />
       </div>
     </main>
   );

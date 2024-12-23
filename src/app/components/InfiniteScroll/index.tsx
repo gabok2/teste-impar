@@ -4,9 +4,24 @@ import { IPokemonItens } from "@/app/interfaces/pokemonItens";
 import { ListPokemon } from "../ListPokemon";
 import { Spinner } from "../Spinner";
 import { useInfiniteScroll } from "./hooks/useInfiniteScroll";
+import { useParamsStore } from "@/app/store/queryParams";
+import { useEffect } from "react";
 
-export function InfiniteScroll() {
+type InfiniteScrollProps = Readonly<{
+  parsedParams: {
+    page?: string;
+    search?: string;
+  };
+}>;
+
+export function InfiniteScroll({ parsedParams }: InfiniteScrollProps) {
+  const setParams = useParamsStore((state) => state.setParams);
+
   const { pokemonList, ref } = useInfiniteScroll();
+
+  useEffect(() => {
+    setParams(parsedParams);
+  }, [parsedParams, setParams]);
 
   return (
     <div className="flex flex-col h-full">
