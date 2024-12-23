@@ -16,7 +16,13 @@ yarn install
 yarn dev
 ```
 
-O projeto estará disponível em http://localhost:3000
+O projeto estará disponível em http://localhost:3000 ou https://teste-impar-op9s.vercel.app/
+
+# Funcionalides Feitas
+
+- **Filtro**
+- **Carregamento Infinito**
+
 
 # Tecnologias Utilizadas
 
@@ -26,4 +32,5 @@ Este projeto utiliza as seguintes tecnologias:
 - **React**: 19.0.0
 - **Tailwind CSS**
 - **react-toastify**
+- **zustand**
 - **react-intersection-observer**
